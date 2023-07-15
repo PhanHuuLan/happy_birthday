@@ -606,16 +606,18 @@
     <div id="balloon-container"></div>
 
     <script>
+
+
       var w = (c.width = window.innerWidth),
         h = (c.height = window.innerHeight),
         ctx = c.getContext("2d"),
         hw = w / 2, // half-width
         hh = h / 2,
         opts = {
-          strings: [ "Happy","Birthday!","TúAnh"],
-          charSize: 70,
-          charSpacing: 70,
-          lineHeight: 140,
+          strings: w > 460 ? [ "Happy Birthday","꧁༺TúAnh༻꧂"] : [ "Happy","Birthday","꧁༺TúAnh༻꧂"],
+          charSize: w > 460 ? 70 : 40,
+          charSpacing: w > 460 ? 70 : 40,
+          lineHeight: w > 460 ? 140: 70,
 
           cx: w / 2,
           cy: h / 2,
@@ -1036,6 +1038,8 @@
     </script>
 
     <script>
+  
+
       window.requestAnimFrame = (function () {
         return (
           window.requestAnimationFrame ||
@@ -1358,8 +1362,7 @@
           "src",
           "https://www.youtube.com/embed/KDxJlW6cxRk?controls=0&loop=1&autoplay=1"
         );
-        //ifrm.style.width = `${w}px`;
-        //ifrm.style.height = `${h}px`;
+        s
         ifrm.style.border = "none";
         document.querySelector("#video").appendChild(ifrm);
       }
