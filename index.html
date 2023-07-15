@@ -625,7 +625,7 @@
           fireworkPrevPoints: 10,
           fireworkBaseLineWidth: 5,
           fireworkAddedLineWidth: 8,
-          fireworkSpawnTime: 50,
+          fireworkSpawnTime: 40,
           fireworkBaseReachTime: 30,
           fireworkAddedReachTime: 30,
           fireworkCircleBaseSize: 20,
@@ -1312,6 +1312,8 @@
         }
       }
 
+      
+
       window.onload = function () {
         var merrywrap = document.getElementById("merrywrap");
         var box = merrywrap.getElementsByClassName("giftbox")[0];
@@ -1414,6 +1416,18 @@ animation: float ${dur}s ease-in infinite
       window.addEventListener("click", () => {
         removeBalloons();
       });
+    </script>
+
+    <script>
+      var audio = new Audio("./happy-birthday.mp3");
+
+      // Hàm phát âm thanh
+      function playHappyBirthday() {
+        audio.currentTime = 0; // Đặt thời gian phát lại về 0 để chắc chắn phát từ đầu
+        audio.play(); // Phát âm thanh
+      }
+      var button = document.getElementById('merrywrap');
+      button.addEventListener('click', playHappyBirthday);
     </script>
   </body>
 </html>
